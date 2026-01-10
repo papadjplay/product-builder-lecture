@@ -1,1 +1,61 @@
-/* Add styles here */
+:root {
+    --primary-color: #6a11cb;
+    --secondary-color: #2575fc;
+    --background-color: #f0f2f5;
+    --text-color: #333;
+    --white: #fff;
+    --border-radius: 12px;
+    --shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    --button-glow: 0 0 15px rgba(37, 117, 252, 0.7);
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background-color);
+    background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"%3E%3Cg fill-rule="evenodd"%3E%3Cg fill="%239C92AC" fill-opacity="0.1"%3E%3Cpath opacity=".5" d="M96 95h4v1h-4v-1zm-7 5h1v-1h-1v1zm-7 0h1v-1h-1v1zm-7 0h1v-1h-1v1zm-7 0h1v-1h-1v1zm-7 0h1v-1h-1v1zm-7 0h1v-1h-1v1zm-7 0h1v-1h-1v1zm-7 0h1v-1h-1v1zm-7 0h1v-1h-1v1zm-7 0h1v-1h-1v1zm-7 0h1v-1h-1v1zm-7 0h1v-1h-1v1zM0 0h1v-1H0v1z"/%3E%3Cpath d="M-1 100V0h1v100h-1zM100 1V0h-1v1h1zM0 100V-1h1v101H0z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+    background-color: var(--white);
+    padding: 3rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+}
+
+h1 {
+    color: var(--primary-color);
+    margin-bottom: 2.5rem;
+    font-weight: 700;
+}
+
+.lotto-numbers-container {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+}
+
+#generate-btn {
+    background-image: linear-gradient(to right, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: var(--white);
+    border: none;
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+#generate-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--button-glow), 0 6px 20px rgba(0,0,0,0.25);
+}
