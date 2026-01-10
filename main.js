@@ -16,7 +16,7 @@ class LottoNumberDisplay extends HTMLElement {
                     line-height: 50px;
                     text-align: center;
                     border-radius: 50%;
-                    color: var(--white);
+                    color: #fff;
                     font-size: 1.5rem;
                     font-weight: 600;
                     margin: 0 0.5rem;
@@ -70,3 +70,17 @@ generateBtn.addEventListener('click', () => {
 
 // Initial generation
 lottoDisplay.updateNumbers(generateLottoNumbers());
+
+const themeToggle = document.getElementById('theme-toggle');
+const root = document.documentElement;
+
+themeToggle.addEventListener('change', () => {
+    root.setAttribute('data-theme', themeToggle.checked ? 'dark' : 'light');
+});
+
+// Set initial theme based on user preference
+const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+if (prefersDark) {
+    root.setAttribute('data-theme', 'dark');
+    themeToggle.checked = true;
+}
