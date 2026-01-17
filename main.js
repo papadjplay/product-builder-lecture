@@ -84,3 +84,36 @@ if (prefersDark) {
     root.setAttribute('data-theme', 'dark');
     themeToggle.checked = true;
 }
+
+// Share functionality
+const twitterBtn = document.getElementById('twitter-share-btn');
+const facebookBtn = document.getElementById('facebook-share-btn');
+const copyLinkBtn = document.getElementById('copy-link-btn');
+
+const pageUrl = window.location.href;
+const shareText = "I just generated my lucky lotto numbers! Check it out: ";
+
+twitterBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    const twitterUrl = `https://twitter.com/intent/tweet?url=${encodeURIComponent(pageUrl)}&text=${encodeURIComponent(shareText)}`;
+    window.open(twitterUrl, '_blank', 'width=600,height=400');
+});
+
+facebookBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    const facebookUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(pageUrl)}`;
+    window.open(facebookUrl, '_blank', 'width=600,height=400');
+});
+
+copyLinkBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    navigator.clipboard.writeText(pageUrl).then(() => {
+        const originalIcon = copyLinkBtn.innerHTML;
+        copyLinkBtn.innerHTML = 'Copied!';
+        setTimeout(() => {
+            copyLinkBtn.innerHTML = originalIcon;
+        }, 2000);
+    }).catch(err => {
+        console.error('Failed to copy: ', err);
+    });
+});
