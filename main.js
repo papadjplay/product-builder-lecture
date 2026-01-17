@@ -117,3 +117,12 @@ copyLinkBtn.addEventListener('click', (e) => {
         console.error('Failed to copy: ', err);
     });
 });
+
+// LINE Share
+const lineBtn = document.getElementById('line-share-btn');
+lineBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    const lineUrl = `https://social-plugins.line.me/lineit/share?url=${encodeURIComponent(pageUrl)}&text=${encodeURIComponent(shareText)}`;
+    window.open(lineUrl, '_blank', 'width=600,height=400');
+});
+

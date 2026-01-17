@@ -202,3 +202,13 @@ h1 {
 .share-btn.copy-link {
     background-color: #6c757d;
 }
+
+.share-btn.kakao {
+    background-color: #FEE500;
+    color: #3C1E1E;
+}
+
+.share-btn.line {
+    background-color: #00C300;
+}
+
